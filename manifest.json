@@ -1,0 +1,21 @@
+{
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "name": "React Chrome Extension",
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "action": {
+        "default_popup": "js/index.html",
+        "default_title": "React Chrome Extension",
+        "default_icon":"src/assets/logo.jpg"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["src/content.js"],
+            "css": ["src/styles.css"]
+        }
+    ],
+    "permissions": ["activeTab"]
+}
