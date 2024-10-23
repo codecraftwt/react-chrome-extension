@@ -1,11 +1,10 @@
-/* src/Chat.css */
 body {
   margin: 0;
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center vertically */
-  background-color: #f7f9fc; /* Background color */
+  align-items: center;
+  background-color: #f7f9fc;
 }
 
 .chat-container {
@@ -46,33 +45,34 @@ body {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Add space between messages */
+  gap: 10px;
 }
 
 .message {
   padding: 10px 15px;
   border-radius: 20px;
-  max-width: 75%; /* Increase max width for messages */
-  position: relative; /* Needed for positioning arrow */
+  max-width: 75%;
+  position: relative;
 }
 
 .user-message {
   align-self: flex-end;
   background-color: #007bff;
   color: white;
-  border-bottom-right-radius: 0; /* Remove corner for speech bubble effect */
+  border-bottom-right-radius: 0;
 }
 
 .bot-message {
   align-self: flex-start;
   background-color: #e2e2e2;
   color: black;
-  border-bottom-left-radius: 0; /* Remove corner for speech bubble effect */
+  border-bottom-left-radius: 0;
 }
 
 .chat-form {
   display: flex;
   width: 100%;
+  margin-bottom: 8px;
 }
 
 .chat-input {
@@ -82,15 +82,54 @@ body {
   border-radius: 5px;
   margin-right: 10px;
   font-size: 16px;
-  transition: border 0.3s; /* Add transition for input */
+  transition: border 0.3s;
 }
 
 .chat-input:focus {
-  border-color: #007bff; /* Highlight border on focus */
-  outline: none; /* Remove default outline */
+  border-color: #007bff;
+  outline: none;
 }
 
-.chat-submit {
+.custom-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.reg-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-right: 5px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.reg-button:hover {
+  color: #007bff;
+  background-color: white;
+  border: solid 1px #007bff;
+}
+.new-button {
+  background-color: #41d5eb;
+  color: white;
+  border: none;
+  margin-right: 5px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.new-button:hover {
+  color: #41d5eb;
+  background-color: white;
+  border: solid 1px #41d5eb;
+}
+
+.me-3 {
+  margin-inline-end: 6px;
+  cursor: pointer;
+}
+
+.submit-button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -98,12 +137,12 @@ body {
   color: black;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s; /* Add transition for button */
 }
 
-.chat-submit:hover {
-  color: lightgray;
-  background-color: black;
+.submit-button:hover {
+  color: black;
+  background-color: white;
+  border: black solid 1px;
 }
 /*--------------------------------------------------------------
     # Scrollbar

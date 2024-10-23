@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import "../App.css"; // Adjust the path if necessary
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowsSpin, faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
 const Chat: React.FC = () => {
   const [messages, setMessages] = useState<{ user?: string; bot?: string }[]>(
     []
   );
   const [input, setInput] = useState("");
-  const [gptTypes, setgptTypes] = useState(["gpt 4o mini", "gptPlus", "Chatgpt"]);
+  const [gptTypes, setgptTypes] = useState([
+    "gpt 4o mini",
+    "gptPlus",
+    "Chatgpt",
+  ]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +36,9 @@ const Chat: React.FC = () => {
   const clearChat = () => {
     setMessages([]);
   };
+
+  const handleRegnerate = async () => {};
+  const handleNewChat = async () => {};
 
   return (
     <div className="chat-container">
@@ -63,10 +72,25 @@ const Chat: React.FC = () => {
           placeholder="Type a message..."
           className="chat-input"
         />
-        <button type="submit" className="chat-submit" disabled={!input.trim()}>
+        <button type="submit" className="submit-button" disabled={!input.trim()}>
           Send
         </button>
       </form>
+      <div className="custom-btn-icon">
+        <button type="button" className="reg-button" onClick={handleRegnerate}>
+          <span>
+            <FontAwesomeIcon className="me-3" icon={faArrowsSpin} />
+            Regenerate
+          </span>
+        </button>
+        <button type="button" className="new-button" onClick={handleNewChat}>
+          <span>
+            {" "}
+            <FontAwesomeIcon className="me-3" icon={faSquarePlus} />
+            New Chat
+          </span>
+        </button>
+      </div>
       <button className="clear-chat" onClick={clearChat}>
         Clear Chat
       </button>
