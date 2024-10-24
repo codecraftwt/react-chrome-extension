@@ -1,8 +1,7 @@
 import React from 'react';
 
-// Define the props interface
 interface ChatbotIconProps {
-    onClick: () => void; // Type for the onClick prop
+    onClick: () => void;
 }
 
 const ChatbotIcon: React.FC<ChatbotIconProps> = ({ onClick }) => {
